@@ -4,3 +4,14 @@ https://memorynotfound.com/unit-test-spring-mvc-rest-service-junit-mockito/#unit
 
 
 https://java2blog.com/spring-boot-spring-security-example/
+
+
+private MockMvc mvc;
+
+	@Before
+	public void setup() {
+		mvc = MockMvcBuilders
+				.webAppContextSetup(context)
+				.apply(springSecurity()) (1)
+				.build();
+	}
