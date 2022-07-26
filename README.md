@@ -6,12 +6,14 @@ https://memorynotfound.com/unit-test-spring-mvc-rest-service-junit-mockito/#unit
 https://java2blog.com/spring-boot-spring-security-example/
 
 
-private MockMvc mvc;
+ @Autowired
+    private TestRestTemplate testRestTemplate;
 
-	@Before
-	public void setup() {
-		mvc = MockMvcBuilders
-				.webAppContextSetup(context)
-				.apply(springSecurity()) (1)
-				.build();
-	}
+    @Test
+    void when_userIsValid_should_return200() throws Exception {
+        String res = testRestTemplate
+                .withBasicAuth("testuser", "testpassword")
+                .getForEntity("/test", String.class)
+                .getBody();
+        Assert.assertEquals("hello", res);
+    }
