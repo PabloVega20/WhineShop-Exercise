@@ -17,3 +17,6 @@ public void invalidCredentials() throws Exception {
 
 
 https://stackoverflow.com/questions/60001748/testing-spring-security-protected-controllers-with-mockmvc-possible
+
+
+https://docs.gitcode.net/spring/guide/en/spring-security/servlet-test-mockmvc-setup.html
