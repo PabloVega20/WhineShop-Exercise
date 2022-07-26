@@ -14,3 +14,6 @@ public void invalidCredentials() throws Exception {
                     "Basic " + Base64Utils.encodeToString("testuser:WRONGpassword".getBytes())))
             .andExpect(status().isOk());
 }
+
+
+https://stackoverflow.com/questions/60001748/testing-spring-security-protected-controllers-with-mockmvc-possible
