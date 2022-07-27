@@ -1,13 +1,3 @@
-List<Wine> findAllByOrderByRatingDesc();
-	List<Wine> findAllByOrderByPriceDesc();
-	
-	
-	
-	public List<Wine> findAllByOrderByRatingDesc() {
-		return wineRepository.findAllByOrderByRatingDesc();
-	}
-	
-	public List<Wine> findAllByOrderByPriceDesc() {
-		return wineRepository.findAllByOrderByPriceDesc();
-	}
-	
+spring.security.user.name=admin
+spring.security.user.password=admin
+spring.security.roles=user	
