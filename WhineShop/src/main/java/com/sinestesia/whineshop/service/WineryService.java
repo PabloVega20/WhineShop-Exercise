@@ -17,28 +17,12 @@ public class WineryService {
 	@Autowired
 	private WineryRepository wineryRepository;
 	
-	@Autowired
-	private WineRepository wineRepository;
-	
-	@Autowired
-	private RegionRepository regionRepository;
-	
-	@Autowired
-	private WineTypeRepository wineTypeRepository;
-	
 	public Winery getWineryById(int id) {
-		return wineryRepository.findById(id).get();
+		return wineryRepository.findById(id).orElse(null);
 	}
 	
-	public Wine getWineById(int id) {
-		return wineRepository.findById(id).get();
+	public void saveWinery(Winery bodega) {
+		wineryRepository.save(bodega);
 	}
-	
-	public Region getRegionById(int id) {
-		return regionRepository.findById(id).get();
-	}
-	
-	public WineType getWineTypeById(int id) {
-		return wineTypeRepository.findById(id).get();
-	}
+
 }
