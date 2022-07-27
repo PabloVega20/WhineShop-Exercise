@@ -6,6 +6,4 @@ import com.sinestesia.whineshop.model.WineType;
 
 public interface WineTypeRepository extends JpaRepository<WineType,Integer>{
 
-	
-	
 }
