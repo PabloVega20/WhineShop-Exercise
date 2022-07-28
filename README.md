@@ -20,3 +20,9 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
                 .httpBasic(Customizer.withDefaults());
         return http.build();
     }
+    
+    
+    <dependency>
+    <groupID>org.springframework.boot</groupID>
+    <artifactID>spring-boot-starter-actuator</artifactID>
+</dependency>
