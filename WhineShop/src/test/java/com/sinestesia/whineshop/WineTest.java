@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.*;
 
 
 import com.sinestesia.whineshop.model.Wine;
-
+import com.sinestesia.whineshop.service.WineService;
 import com.sinestesia.whineshop.service.WineryService;
 
 
@@ -29,7 +29,7 @@ class WineTest {
 	MockMvc mockMvc;
 	
 	@MockBean
-	private WineryService wineService;
+	private WineService wineService;
 	
 	@Test
 	@WithMockUser(username = "admin",password = "admin",roles = {"user"})
