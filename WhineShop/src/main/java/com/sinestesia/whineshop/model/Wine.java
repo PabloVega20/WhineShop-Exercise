@@ -13,6 +13,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
+import com.sinestesia.whineshop.validation.MaxCurrentYear;
+
 @Entity
 public class Wine {
 
@@ -25,7 +27,7 @@ public class Wine {
 	private String name;
 	@NotNull
 	@Min(1900)
-	@Max(2022)
+	@MaxCurrentYear
 	private Integer year;
 	@NotNull
 	@Positive (message = "debe ser positivo el rating")

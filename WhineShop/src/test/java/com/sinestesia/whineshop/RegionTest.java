@@ -17,7 +17,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.*;
 import com.sinestesia.whineshop.model.Region;
-
+import com.sinestesia.whineshop.service.RegionService;
 import com.sinestesia.whineshop.service.WineryService;
 
 
@@ -28,13 +28,13 @@ class RegionTest {
 	MockMvc mockMvc;
 	
 	@MockBean
-	private WineryService wineService;
+	private RegionService regionService;
 	
 	@Test
 	@WithMockUser(username = "admin",password = "admin",roles = {"user"})
 	void testWineById() throws Exception {
 		Region region = new Region(1,"test","test");
-		Mockito.when(wineService.getRegionById(1)).thenReturn(region);
+		Mockito.when(regionService.getRegionById(1)).thenReturn(region);
 		
 		mockMvc.perform(get("/api/region/{id}",1)).andExpect(status().isOk()).andExpect(jsonPath("$.id",is(1)));
 				
